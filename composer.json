@@ -1,0 +1,17 @@
+{
+    "name": "kingsnigdho/vanilla-php-framework",
+    "description": "A simple framework written in Vanilla PHP",
+    "type": "project",
+    "authors": [
+        {
+            "name": "King Snigdho",
+            "email": "ssnigdho@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
