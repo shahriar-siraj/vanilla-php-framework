@@ -3,11 +3,15 @@
 namespace App\Controllers;
 
 use App\Helpers\View;
+use App\Models\User;
 
 class HomeController
 {
     public function index()
     {
+        // $users = User::getAll();
+
+
         $users = array(
             (object) [
                 'first_name' => 'John',
@@ -50,5 +54,18 @@ class HomeController
             'users' => $users
         ]);
     }
+
+    // public function create_user()
+    // {
+    //     $user = (object) [
+    //         'first_name' => 'Myra',
+    //         'last_name' => 'Dalton',
+    //         'email' => 'myra@example.com4',
+    //         'age' => 21,
+    //         'country' => 'Sweden'
+    //     ];
+
+    //     User::create($user);
+    // }
 
 }

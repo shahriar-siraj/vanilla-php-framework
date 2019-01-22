@@ -11,6 +11,11 @@ require 'vendor/autoload.php';
 require 'app/routes.php';
 
 /**
+ * Require configuration file
+ */
+require 'app/config.php';
+
+/**
  * Handle routes from Route helper class
  */
 use App\Helpers\Route;
