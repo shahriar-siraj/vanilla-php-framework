@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Params;
 use App\Helpers\View;
 use App\Models\User;
 
@@ -10,7 +11,6 @@ class HomeController
     public function index()
     {
         // $users = User::getAll();
-
 
         $users = array(
             (object) [
@@ -49,6 +49,16 @@ class HomeController
                 'country' => 'Australia'
             ]
         );
+
+        return View::render('home/welcome.php', [
+            'users' => $users
+        ]);
+    }
+
+    public function get_user()
+    {
+        $users = array();
+        $users[] = User::find(Params::get('id'));
 
         return View::render('home/welcome.php', [
             'users' => $users

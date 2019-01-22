@@ -14,6 +14,21 @@ class User
     private static $table_name = "users";
 
     /**
+     * Get single user
+     *
+     * @param int $id
+     * @return mixed
+     */
+    public static function find($id)
+    {
+        $sql = "select * from " . self::$table_name . " where id = " . $id;
+
+        $user = DB::query($sql)->first();
+
+        return $user;
+    }
+
+    /**
      * Get all users
      *
      * @return mixed

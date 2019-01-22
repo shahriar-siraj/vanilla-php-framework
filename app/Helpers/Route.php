@@ -102,6 +102,20 @@ class Route
             }
         }
 
+        $url_parts = explode('/', $path);
+        $route_parts = explode('/', $desired_route->path);
+
+        foreach ($route_parts as $key => $value) {
+            if (!empty($value)) {
+                $value = str_replace('{', '', $value, $count1);
+                $value = str_replace('}', '', $value, $count2);
+
+                if ($count1 == 1 && $count2 == 1) {
+                    Params::set($value, $url_parts[$key]);
+                }
+            }
+        }
+
         if ($desired_route) {
             if ($desired_route->method != strtolower($_SERVER['REQUEST_METHOD'])) {
                 http_response_code(404);
